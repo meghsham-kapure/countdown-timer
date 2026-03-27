@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Countdown</title>
+  <title>Countdown Timer</title>
 
-  <!-- Tailwind -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Font -->
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
+  <style>
     body {
-      font-family: 'Doto', sans-serif;
+      font-family: 'Orbitron', sans-serif;
     }
   </style>
 </head>
-
 <body class="bg-black text-white flex flex-col items-center justify-center h-screen w-screen overflow-hidden px-6">
 
   <!-- Quote -->
@@ -27,9 +26,7 @@
   </div>
 
   <!-- Numbers Row -->
-  <div class="flex items-center justify-center gap-3"
-       style="font-size: min(20vh, 9vw); line-height: 1;">
-
+  <div class="flex items-center justify-center gap-3" style="font-size: min(20vh, 9vw); line-height: 1;">
     <div id="days">00</div>
     <div class="opacity-70">:</div>
 
@@ -43,19 +40,16 @@
     <div class="opacity-70">:</div>
 
     <div id="ms">000</div>
-
   </div>
 
   <!-- Labels Row -->
   <div class="flex items-center justify-center gap-6 mt-4 text-center"
        style="font-size: min(2.5vh, 1.6vw);">
-
     <div class="w-[10vw] opacity-50 tracking-widest">DAYS</div>
     <div class="w-[10vw] opacity-50 tracking-widest">HOURS</div>
     <div class="w-[10vw] opacity-50 tracking-widest">MIN</div>
     <div class="w-[10vw] opacity-50 tracking-widest">SEC</div>
     <div class="w-[10vw] opacity-50 tracking-widest">MS</div>
-
   </div>
 
   <script>
@@ -64,7 +58,6 @@
     function updateCountdown() {
       const now = new Date();
       let diff = targetDate - now;
-
       if (diff <= 0) diff = 0;
 
       let days = Math.floor(diff / (1000 * 60 * 60 * 24));
